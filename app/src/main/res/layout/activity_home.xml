@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.HomeActivity">
+
+    <!--app:defaultNavHost="true"
+       app:navGraph="@navigation/home_graph"
+       네브호스트 자동완성 안됨; : androidx.navigation.fragment.NavHostFragment -->
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/container_home"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:navGraph="@navigation/home_graph" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_home"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/bg_bottom_sheet_radius"
+        app:itemActiveIndicatorStyle="@null"
+        app:itemIconSize="28dp"
+        app:itemIconTint="@color/selector_botton_navigation_color"
+        app:itemTextColor="@color/selector_botton_navigation_color"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/home_navigation_menu" />
+    <!--app:itemIconSize="28dp"-->
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/mainFAB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/bg_button_transparent_round"
+        android:backgroundTint="#7E57EF"
+        android:contentDescription="추가 버튼"
+        android:src="@drawable/ic_draw"
+        app:borderWidth="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_home"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

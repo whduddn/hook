@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:paddingStart="24dp"
+    android:paddingEnd="24dp"
+    tools:context=".view.AddHookActivity"
+    tools:ignore="MissingDefaultResource">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar_new_hook"
+        android:layout_width="0dp"
+        android:layout_height="68dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="새로운 훅"
+        app:titleCentered="true"
+        app:titleTextAppearance="@style/AppTexTitle.S16" />
+
+    <ImageView
+        android:id="@+id/iv_appbar_back_button"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar_new_hook"
+        app:layout_constraintStart_toStartOf="@id/toolbar_new_hook"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_link_info"
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:layout_marginTop="8dp"
+        android:text=" 링크 정보"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/tv_url_link"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_new_hook" />
+
+    <EditText
+        android:id="@+id/tv_url_link"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="40dp"
+        android:background="@drawable/textview_detail_border"
+        android:hint="@string/hint_url_link"
+        android:inputType="textMultiLine"
+        android:paddingLeft="40dp"
+        android:paddingTop="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp"
+        android:textAppearance="@style/AppTextPrimary.S16"
+        android:textColor="@color/purple"
+        android:theme="@style/MyCheckBox"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_link_info"
+        tools:ignore="TextFields" />
+
+    <ImageView
+        android:id="@+id/iv_url_link"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/description_link"
+        android:src="@drawable/ic_link"
+        android:textAppearance="@style/AppTextPrimary.S14"
+        android:textColor="@color/purple"
+        android:textColorHint="@color/gray_300"
+        app:layout_constraintBottom_toBottomOf="@id/tv_url_link"
+        app:layout_constraintStart_toStartOf="@id/tv_url_link"
+        app:layout_constraintTop_toTopOf="@id/tv_url_link" />
+
+    <EditText
+        android:id="@+id/tv_url_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="40dp"
+        android:layout_marginTop="10dp"
+        android:autofillHints="제목"
+        android:background="@drawable/textview_detail_border"
+        android:gravity="top|start"
+        android:hint="제목"
+        android:inputType="textMultiLine"
+        android:maxLength="120"
+        android:paddingStart="16dp"
+        android:paddingTop="15dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="15dp"
+        android:textAppearance="@style/AppTextPrimary.S16"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray_300"
+        android:theme="@style/MyCheckBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_url_link" />
+
+    <TextView
+        android:id="@+id/tv_limit_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint=""
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_url_title"
+        app:layout_constraintRight_toRightOf="@id/tv_url_title" />
+
+    <View
+        android:id="@+id/container_link_info_etc"
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tv_link_info_etc"
+        app:layout_constraintTop_toTopOf="@id/tv_link_info_etc" />
+
+
+    <TextView
+        android:id="@+id/tv_link_info_etc"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:layout_marginTop="20dp"
+        android:text=" 기타 정보"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_url_title" />
+
+    <ImageView
+        android:id="@+id/iv_downArrow"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:contentDescription="@string/etc_info"
+        android:src="@drawable/ic_down_arrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_link_info_etc" />
+
+
+    <EditText
+        android:id="@+id/tv_url_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="40dp"
+        android:layout_marginTop="5dp"
+        android:autofillHints="설명"
+        android:background="@drawable/textview_detail_border"
+        android:gravity="top|start"
+        android:hint="설명"
+        android:inputType="textMultiLine"
+        android:maxLength="80"
+        android:paddingStart="16dp"
+        android:paddingTop="15dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="15dp"
+        android:textAppearance="@style/AppTextPrimary.S16"
+        android:textColorHint="@color/gray_300"
+        android:theme="@style/MyCheckBox"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_link_info_etc" />
+
+    <TextView
+        android:id="@+id/tv_limit_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint=""
+        android:padding="5dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/tv_url_description"
+        app:layout_constraintRight_toRightOf="@id/tv_url_description" />
+
+    <TextView
+        android:id="@+id/tv_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:layout_marginTop="20dp"
+        android:text=" 태그"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@id/tv_link_info_etc"
+        app:layout_constraintTop_toBottomOf="@id/tv_url_description" />
+
+    <TextView
+        android:id="@+id/container_tag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/textview_detail_border"
+        android:hint="#"
+        android:paddingStart="16dp"
+        android:paddingTop="15dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="15dp"
+        android:text="#"
+        android:textAppearance="@style/AppTexTitle.S16"
+        android:textColor="@color/gray_300"
+        android:theme="@style/MyCheckBox"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_tag" />
+
+    <ImageView
+        android:id="@+id/iv_add_new_hook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:contentDescription="@string/description_save_changes"
+        android:src="@drawable/ic_add_tag_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
