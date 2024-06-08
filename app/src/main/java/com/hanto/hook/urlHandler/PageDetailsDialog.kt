@@ -140,7 +140,7 @@ class PageDetailsDialog(context: Context, val sharingActivity: Sharing, val titl
         buttonCancel?.setOnClickListener {
             println("취소버튼클릭")
             dismiss()
-            (context as? Activity)?.finishAffinity()
+            (context as? Activity)?.finishAndRemoveTask()
         }
 
 
@@ -169,7 +169,7 @@ class PageDetailsDialog(context: Context, val sharingActivity: Sharing, val titl
                 }
 
                 dismiss()
-                (context as? AppCompatActivity)?.finish()
+                (context as? Activity)?.finishAndRemoveTask()
             }
             // 출력
             dismiss()

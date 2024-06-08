@@ -2,6 +2,7 @@ package com.hanto.hook.view
 
 import android.os.Bundle
 import android.text.Editable
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -79,6 +80,7 @@ class ChangeTagFragment(private val onTagUpdated: () -> Unit) : DialogFragment()
         viewModel.successData.observe(viewLifecycleOwner, Observer { successResponse ->
             successResponse?.let {
                 Toast.makeText(requireContext(), "태그 이름이 수정되었습니다.", Toast.LENGTH_SHORT).show()
+                // 변경사항확인용23
                 onTagUpdated()
                 dismiss()
             }
