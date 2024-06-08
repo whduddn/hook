@@ -58,20 +58,20 @@ class DeleteTagFragment(private val onTagDeleted: () -> Unit) : DialogFragment()
         }
 
         // 결과 관찰
-        viewModel.successData.observe(viewLifecycleOwner, Observer { successResponse ->
+        viewModel.successData.observe(viewLifecycleOwner) { successResponse ->
             successResponse?.let {
                 Toast.makeText(requireContext(), "태그가 삭제되었습니다.", Toast.LENGTH_SHORT).show()
                 Log.d("DeleteTagFragment", "태그 삭제 성공, 콜백 호출")
                 onTagDeleted() // 태그 삭제 성공 시 콜백 호출
                 dismiss()
             }
-        })
+        }
 
-        viewModel.errorData.observe(viewLifecycleOwner, Observer { errorResponse ->
+        viewModel.errorData.observe(viewLifecycleOwner) { errorResponse ->
             errorResponse?.let {
                 Toast.makeText(requireContext(), "태그 삭제에 실패했습니다: ${it.message}", Toast.LENGTH_SHORT).show()
             }
-        })
+        }
     }
 
     override fun onDestroyView() {

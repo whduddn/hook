@@ -59,6 +59,8 @@ class SelectedTagActivity : AppCompatActivity() {
         ivTagChange.setOnClickListener {
             val changeTagFragment = ChangeTagFragment {
                 viewModel.loadFindMyTags() // 태그 목록 새로고침
+                setResult(RESULT_OK)
+                finish() // 태그가 삭제된 후 액티비티를 종료
             }.apply {
                 arguments = Bundle().apply {
                     putString("selectedTag", selectedTagName)
@@ -73,12 +75,16 @@ class SelectedTagActivity : AppCompatActivity() {
             val deleteTagFragment = DeleteTagFragment {
                 Log.d("SelectedTagActivity", "태그 삭제 후 태그 목록 새로고침")
                 viewModel.loadFindMyTags() // 태그 목록 새로고침
+                setResult(RESULT_OK) // 결과 설정
+                finish() // 태그가 삭제된 후 액티비티를 종료
+
             }.apply {
                 arguments = Bundle().apply {
                     putInt("selectedTagId", selectedTagId)
                 }
             }
             deleteTagFragment.show(supportFragmentManager, "DeleteTagFragment")
+
         }
 
 
@@ -156,4 +162,6 @@ class SelectedTagActivity : AppCompatActivity() {
         // ViewModel의 관찰자를 해제하여 메모리 누수 방지
         viewModel.tagFilteredHooks.removeObservers(this)
     }
+
+
 }
