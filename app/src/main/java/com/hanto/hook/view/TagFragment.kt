@@ -155,7 +155,7 @@ class TagFragment : Fragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 1 && resultCode == AppCompatActivity.RESULT_OK) {
-            // SelectedTagActivity 종료 후 태그 목록 새로고침
+            // SelectedTagActivity 종료 후 태그 목록 새로고침zz
             refreshTagList()
         }
     }
